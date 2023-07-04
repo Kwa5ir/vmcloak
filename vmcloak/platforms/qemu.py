@@ -36,9 +36,9 @@ def _create_image_disk(path, size):
 
 def _create_snapshot_disk(image_path, path):
     log.info("Creating snapshot %s with master %s", path, image_path)
-    subprocess.check_call(["qemu-img", "create", "-f", "qcow2", "-o",
+    subprocess.check_call(["qemu-img", "create", "-F", "qcow2", "-o",
                            "lazy_refcounts=on,cluster_size=2M", "-b",
-                           image_path, path])
+                           image_path, "-f", "qcow2", path])
 
 
 def _make_pre_v41_args(attr):
@@ -58,7 +58,8 @@ def _make_pre_v41_args(attr):
         "-device", "ide-cd,bus=ahci.1,unit=0,drive=cdrom,bootindex=1",
         "-device", "usb-ehci,id=ehci",
         "-device", "usb-tablet,bus=ehci.0",
-        "-soundhw", "hda",
+        "-device", "intel-hda",
+        "-device", "hda-duplex",
         "--enable-kvm"
     ]
 
@@ -82,7 +83,8 @@ def _make_post_v41_args(attr):
         "-device", "ide-cd,bus=ahci.1,unit=0,drive=cdrom,bootindex=1",
         "-device", "usb-ehci,id=ehci",
         "-device", "usb-tablet,bus=ehci.0",
-        "-soundhw", "hda",
+        "-device", "intel-hda",
+        "-device", "hda-duplex",
         "-enable-kvm"
     ]
 
