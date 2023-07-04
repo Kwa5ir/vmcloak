@@ -2,12 +2,16 @@
 # Copyright (C) 2018 Hatching B.V.
 # This file is part of VMCloak - http://www.vmcloak.org/.
 # See the file 'docs/LICENSE.txt' for copying permission.
+#
+# See Archive
+#https://archive.mozilla.org/pub/firefox/releases/
+#
 
 from vmcloak.abstract import Dependency
 
 class Firefox(Dependency):
     name = "firefox"
-    default = "41.0.2"
+    default = "115.0.0"
     tags = ["browser_firefox"]
     exes = [{
         "version": "41.0.2",
@@ -21,7 +25,11 @@ class Firefox(Dependency):
         "version": "63.0.3",
         "url": "https://cuckoo.sh/vmcloak/firefox_63_0_3.exe",
         "sha1": "c5f03fc93aebd2db9da14ba6eb1f01e98e18d95b",
-    }]
+    }, {
+        "version": "115.0.0",
+        "url": "https://archive.mozilla.org/pub/firefox/releases/115.0esr/win64/en-US/Firefox%20Setup%20115.0esr.exe",
+        "sha1": "cc304d56a5183f630cfe18b08376ba595bee6ce3",
+    }  ]
 
     def run(self):
         self.upload_dependency("C:\\Firefox_Setup_41.0.2.exe")
