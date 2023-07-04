@@ -43,7 +43,7 @@ deployment.expiration.check.enabled.locked
 
 class Java(Dependency):
     name = "java"
-    default = "7u80"
+    default = "7u371"
     recommended = True
     multiversion = True
     tags = ["java"]
