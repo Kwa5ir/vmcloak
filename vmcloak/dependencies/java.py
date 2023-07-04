@@ -933,6 +933,22 @@ class Java(Dependency):
         ],
         "sha1": "57747ce996b5b2f1786601b04a0b0355fc82493a",
         "filename": "jre-8u151-windows-x64.exe",
+    }, {
+        "arch": "x86",
+        "version": "8u371",
+        "urls": [
+            "https://javadl.oracle.com/webapps/download/AutoDL?BundleId=248240_ce59cff5c23f4e2eaf4e778a117d4c5b",
+        ],
+        "sha1": "14970b5fec652d066d93a41b84a4361cd798f7bb",
+        "filename": "jre-8u371-windows-i586.exe",
+    }, {
+        "arch": "amd64",
+        "version": "8u371",
+        "urls": [
+            "https://javadl.oracle.com/webapps/download/AutoDL?BundleId=248242_ce59cff5c23f4e2eaf4e778a117d4c5b",
+        ],
+        "sha1": "8e0e31e6323d19439f038ee637f34ef6478d7d72",
+        "filename": "jre-8u371-windows-x64.exe",
     }]
 
     def run(self):
